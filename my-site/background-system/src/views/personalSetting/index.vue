@@ -1,5 +1,6 @@
 <template>
   <div class="app-container">
+    <div class="block">密码修改</div>
     <el-form
       ref="ruleForm"
       :model="adminInfo"
@@ -8,10 +9,7 @@
       width="500px"
     >
       <el-form-item label="用户名">
-        <el-input
-          v-model="adminInfo.name"
-          placeholder="请输入用户名"
-        />
+        <el-input v-model="adminInfo.name" placeholder="请输入用户名" />
       </el-form-item>
       <el-form-item label="旧密码" prop="oldLoginPwd">
         <el-input
@@ -39,7 +37,7 @@
 
       <el-button
         type="primary"
-        style="margin-top: 15px"
+        style="margin-top: 15px;"
         @click="handleClick"
       >修改</el-button>
       <el-button
@@ -53,7 +51,11 @@
 
 <script>
 import { getInfo, setUser } from '@/api/user.js'
+import Upload from '@/components/Upload.vue'
 export default {
+  components: {
+    Upload
+  },
   data() {
     var validatePass2 = (rule, value, callback) => {
       if (value === '') {
@@ -93,8 +95,8 @@ export default {
   },
   methods: {
     fetchData() {
-      getInfo().then((res) => {
-        this.adminInfo = res.data
+      getInfo().then(({data}) => {
+        this.adminInfo = data;
       })
     },
     handleBack() {
@@ -130,5 +132,9 @@ export default {
 <style scoped>
 .app-container {
   width: 500px;
+}
+.block {
+  font-weight: 100;
+  padding: 15px 0;
 }
 </style>

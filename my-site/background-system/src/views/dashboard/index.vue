@@ -9,12 +9,12 @@
       </el-col>
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
-          <pie-chart />
+          <PieChart2 />
         </div>
       </el-col>
       <el-col :xs="24" :sm="24" :lg="8">
         <div class="chart-wrapper">
-          <pie-chart />
+          <PieChart3 />
         </div>
       </el-col>
     </el-row>
@@ -24,9 +24,12 @@
 <script>
 import { mapGetters } from 'vuex'
 import PieChart from './components/pieChart'
+import PieChart3 from './components/pieChart3'
+import PieChart2 from './components/pieChart2'
 export default {
   name: 'Dashboard',
-  components: { PieChart }
+  components: { PieChart ,PieChart3,PieChart2
+}
   // computed: {
   //   ...mapGetters([
   //     'name'

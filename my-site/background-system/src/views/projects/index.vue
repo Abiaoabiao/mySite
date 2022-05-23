@@ -35,7 +35,7 @@
       <el-table-column align="center" label="预览图">
         <template slot-scope="scope">
           <el-image
-            :src="scope.row.thumb2"
+            :src="scope.row.thumb"
             style="width: 200px"
             :preview-src-list="srcList"
           />
@@ -166,9 +166,8 @@ export default {
         this.data = data
         this.listLoading = false
         for (const i of this.data) {
-          i.thumb2 = server_URL + i.thumb
         i.description = i.description.join('；')
-          this.srcList.push(i.thumb2)
+          this.srcList.push(i.thumb)
         }
       })
     },

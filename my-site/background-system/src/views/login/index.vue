@@ -113,7 +113,7 @@ export default {
     return {
       loginForm: {
         loginId: 'admin',
-        loginPwd: '159123',
+        loginPwd: '',
         captcha: '',
         checked: true
       },

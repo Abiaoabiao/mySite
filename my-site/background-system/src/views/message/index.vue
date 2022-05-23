@@ -106,7 +106,6 @@ export default {
         this.listLoading = false
         this.data = data.rows
         for (const i of this.data) {
-          i.avatar = server_URL + i.avatar
           i.createDate = formatDate(i.createDate)
         }
         this.count = data.total
@@ -145,6 +144,7 @@ export default {
     currentChangeHandle(pageNum) {
       this.currentPage = parseInt(pageNum)
       this.fetchData()
+      this.listLoading = true
     },
     prevClickHandle() {
       this.currentPage -= 1

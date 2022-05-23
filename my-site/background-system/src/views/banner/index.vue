@@ -31,7 +31,7 @@
       ><template slot-scope="scope">
         <el-image
           style="width: 150px"
-          :src="scope.row.midImg2"
+          :src="scope.row.midImg"
           fit="fill"
           :preview-src-list="midList"
         />
@@ -43,7 +43,7 @@
       ><template slot-scope="scope">
         <el-image
           style="width: 150px"
-          :src="scope.row.bigImg2"
+          :src="scope.row.bigImg"
           fit="fill"
           :preview-src-list="bigList"
         />
@@ -148,13 +148,9 @@ export default {
     fetchData() {
       getBanner().then((res) => {
         this.data = res.data
-        for (const item of this.data) {
-          item.midImg2 = server_URL + item.midImg
-          item.bigImg2 = server_URL + item.bigImg
-        }
         res.data.map((item) => {
-          this.midList.push(item.midImg2)
-          this.bigList.push(item.bigImg2)
+          this.midList.push(item.midImg)
+          this.bigList.push(item.bigImg)
         })
       })
     },

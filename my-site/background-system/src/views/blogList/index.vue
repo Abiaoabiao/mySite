@@ -152,7 +152,6 @@ export default {
         this.data = data.rows
         for (var i of this.data) {
           i.createDate = formatDate(i.createDate)
-          i.thumb = server_URL + i.thumb
           this.srcList.push(i.thumb)
         }
         this.count = data.total
@@ -167,7 +166,7 @@ export default {
     },
     // 跳转到具体的文章
     goToTitleHandler(blogInfo) {
-      window.open(`${frontEnd_URL}/article/${blogInfo.id}`)
+      window.open(`/article/${blogInfo.id}`)
     },
     // 删除文章
     deleteBlog(blogInfo) {

@@ -18,7 +18,7 @@
     <div style="margin-bottom: 15px">
       <el-image
         style="width: 100px; height: 100px"
-        :src="form.avatar2"
+        :src="form.avatar"
       />
     </div>
     <el-divider />
@@ -179,9 +179,9 @@ export default {
       getSetting().then((res) => {
         this.form = res.data
         // 处理图片的链接
-        this.form.avatar2 = server_URL  + this.form.avatar;
+        // this.form.avatar2 = server_URL  + this.form.avatar;
         // this.form.qqQrCode2 = server_URL  + this.form.qqQrCode;
-        // this.form.weixinQrCode2 = server_URL  + this.form.weixinQrCode;
+        // this.form.weixinQrCode2 =   + this.form.weixinQrCode;
         this.form2 = { ...this.form }
       })
     },
